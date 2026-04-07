@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Дыши</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+<a href="index.html">Главная</a>
+<a href="about.html">О проекте</a>
+<a href="support.html">Поддержка</a>
+<a href="contact.html">Помощь</a>
+</nav>
+
+<section class="hero fade-in">
+<h1 class="breathing">Дыши</h1>
+
+<p class="subtitle">Если тебе тяжело — ты не один</p>
+
+<p class="desc">
+Этот сайт поможет тебе:
+<br>— немного успокоиться  
+<br>— понять своё состояние  
+<br>— сделать маленький шаг вперёд
+</p>
+
+<button onclick="showSupport()">Мне сейчас тяжело</button>
+</section>
+
+<div id="supportBox" class="support-box hidden">
+<p>Сейчас не нужно решать всё сразу.  
+Сделай медленный вдох… и выдох.  
+Ты уже справляешься лучше, чем думаешь.</p>
+</div>
+
+<script>
+function showSupport() {
+    document.getElementById("supportBox").style.display = "block";
+}
+</script>
+
+</body>
+</html>

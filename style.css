@@ -1,0 +1,267 @@
+/* ==========================
+   БАЗОВЫЕ СТИЛИ
+========================== */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Montserrat:wght@400;600&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    color: #2b2b2b;
+    text-align: center;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(160deg, #f0f4f8, #dbe7f3, #e8f1fc);
+    animation: bgMove 25s linear infinite;
+}
+
+/* ==========================
+   АНИМАЦИЯ ФОНА (легкие световые пятна)
+========================== */
+body::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+    animation: lightMove 30s linear infinite;
+    pointer-events: none;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,200,200,0.1) 0%, transparent 60%);
+    animation: lightMoveReverse 40s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes lightMove {
+    0% { transform: translate(0,0) rotate(0deg); }
+    100% { transform: translate(40%,40%) rotate(360deg); }
+}
+
+@keyframes lightMoveReverse {
+    0% { transform: translate(0,0) rotate(0deg); }
+    100% { transform: translate(-40%,-40%) rotate(-360deg); }
+}
+
+@keyframes bgMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 1000px; }
+}
+
+/* ==========================
+   НАВИГАЦИЯ
+========================== */
+nav {
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(12px);
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-radius: 0 0 20px 20px;
+}
+
+nav a {
+    color: #4a4a4a;
+    margin: 15px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #6c5ce7;
+}
+
+/* ==========================
+   HERO
+========================== */
+.hero {
+    margin-top: 80px;
+    padding: 20px;
+}
+
+h1 {
+    font-family: 'Comfortaa', cursive;
+    font-size: 56px;
+    margin-bottom: 10px;
+    color: #6c5ce7;
+}
+
+.subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+/* ==========================
+   АНИМАЦИЯ ДЫХАНИЯ
+========================== */
+.breathing {
+    animation: breathe 4s ease-in-out infinite;
+}
+
+@keyframes breathe {
+    0% { transform: scale(1); opacity: 0.9; }
+    50% { transform: scale(1.07); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.9; }
+}
+
+/* ==========================
+   ТЕКСТ
+========================== */
+.desc {
+    margin-top: 15px;
+    line-height: 1.6;
+    opacity: 0.85;
+    font-size: 18px;
+    color: #3b3b3b;
+}
+
+/* ==========================
+   БАЗОВЫЕ КНОПКИ
+========================== */
+button {
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #a8edea, #fed6e3);
+    border: none;
+    color: #2b2b2b;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(170,140,255,0.4);
+}
+
+/* ==========================
+   СТЕКЛЯННЫЕ БЛОКИ И ПОДДЕРЖКА
+========================== */
+.support-box {
+    margin: 20px auto;
+    padding: 25px;
+    width: 80%;
+    max-width: 500px;
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    animation: fadeIn 0.5s ease;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+}
+
+/* Списки внутри блоков */
+.support-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.support-box li {
+    margin: 8px 0;
+}
+
+/* ==========================
+   ЭМОЦИИ-КНОПКИ
+========================== */
+.emotion-buttons {
+    margin: 20px 0;
+}
+
+.emotion-buttons button {
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(8px);
+    border: none;
+    color: #4a4a4a;
+    padding: 12px 18px;
+    margin: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.emotion-buttons button:hover {
+    background: rgba(170,140,255,0.3);
+    transform: scale(1.05);
+}
+
+/* ==========================
+   ПОЯВЛЕНИЕ
+========================== */
+.fade-in {
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================
+   Заголовки и ссылки
+========================== */
+h2 {
+    margin-top: 40px;
+    color: #6c5ce7;
+    font-family: 'Comfortaa', cursive;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+a {
+    color: #a29bfe;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================
+   Скрытые элементы
+========================== */
+.hidden {
+    display: none;
+}
+
+/* ==========================
+   АДАПТИВ
+========================== */
+@media (max-width: 600px) {
+    nav { 
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    h1 { font-size: 36px; }
+    h2 { font-size: 24px; }
+    p, li { font-size: 16px; line-height: 1.5; }
+
+    .support-box, .emotion-buttons button {
+        width: 90%;
+        margin: 10px auto;
+    }
+}
