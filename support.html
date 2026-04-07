@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Поддержка</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+<a href="index.html">Главная</a>
+<a href="about.html">О проекте</a>
+<a href="support.html">Поддержка</a>
+<a href="contact.html">Помощь</a>
+</nav>
+
+<h1>Поддержка</h1>
+<p>Выбери эмоцию, которая ближе тебе сейчас:</p>
+
+<div class="emotion-buttons">
+<button onclick="showInfo('none')">😞 Нет сил</button>
+<button onclick="showInfo('anxious')">😰 Тревожно</button>
+<button onclick="showInfo('lonely')">💔 Одиноко</button>
+<button onclick="showInfo('stress')">😣 Перегружен</button>
+</div>
+
+<div id="infoBox" class="support-box hidden">
+<!-- Здесь будет появляться текст -->
+</div>
+
+<script>
+function showInfo(emotion) {
+    const box = document.getElementById('infoBox');
+    let content = '';
+
+    switch(emotion) {
+        case 'none':
+            content = `
+            <h2>😞 Нет сил</h2>
+            <p><b>Почему это происходит:</b> Перегруз и усталость могут "выключать" энергию.</p>
+            <p><b>Что можно сделать:</b></p>
+            <ul>
+            <li>Сделай одну маленькую задачу (например, просто открыть тетрадь)</li>
+            <li>Позволь себе отдохнуть без чувства вины</li>
+            <li>Выпей воды или сделай паузу на 5 минут</li>
+            <li>Сделай короткую прогулку или растяжку</li>
+            </ul>
+            `;
+            break;
+        case 'anxious':
+            content = `
+            <h2>😰 Тревожно</h2>
+            <p><b>Почему это происходит:</b> Мозг пытается защитить тебя, даже если угрозы нет.</p>
+            <p><b>Попробуй дыхательную технику:</b></p>
+            <p>Вдох 4 сек → задержка 4 сек → выдох 6 сек</p>
+            <p><b>Ещё можно:</b></p>
+            <ul>
+            <li>Назвать 5 вещей, которые ты видишь</li>
+            <li>Сфокусироваться на звуках вокруг</li>
+            <li>Записать свои тревожные мысли на лист бумаги</li>
+            </ul>
+            `;
+            break;
+        case 'lonely':
+            content = `
+            <h2>💔 Одиноко</h2>
+            <p><b>Важно понять:</b> одиночество — это чувство, а не факт.</p>
+            <p><b>Что может помочь:</b></p>
+            <ul>
+            <li>Написать кому-то (даже простое "привет")</li>
+            <li>Посмотреть что-то уютное или смешное</li>
+            <li>Обнять подушку или завернуться в плед</li>
+            <li>Вспомнить моменты, когда тебе было хорошо</li>
+            </ul>
+            `;
+            break;
+        case 'stress':
+            content = `
+            <h2>😣 Перегружен</h2>
+            <p><b>Почему это происходит:</b> Слишком много задач одновременно, недостаток отдыха.</p>
+            <p><b>Что может помочь:</b></p>
+            <ul>
+            <li>Составить простой план на ближайший час</li>
+            <li>Разделить большие задачи на маленькие шаги</li>
+            <li>Сделать перерыв: музыка, прогулка, чай</li>
+            <li>Напомнить себе: важно делать то, что реально можешь</li>
+            </ul>
+            `;
+            break;
+    }
+
+    box.innerHTML = content;
+    box.style.display = 'block';
+}
+</script>
+
+<h2>🧠 Ты не обязан:</h2>
+<ul>
+<li>Быть продуктивным всегда</li>
+<li>Нравиться всем</li>
+<li>Справляться со всем в одиночку</li>
+</ul>
+
+<p>Ты уже стараешься. И этого достаточно.</p>
+
+</body>
+</html>
